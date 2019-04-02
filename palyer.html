@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Cody影音</title>
+    <link rel="stylesheet" href="./lib/mui/css/mui.css" />
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="./less/palyer.css" />
+  </head>
+  <body>
+    <div id="cody">
+      <!-- 头部区域 -->
+      <header id="header">
+        <div class="left">
+          <H1>Cody</H1>
+        </div>
+        <div class="content">
+          <h4>做最有个性的音乐</h4>
+        </div>
+        <div class="right">
+          <a href="#" class="fa fa-search"></a>
+        </div>
+      </header>
+      <!-- 主体区域 -->
+      <main id="main">
+        <div class="paly">
+          <img
+            :src="picUrl"
+            class="cover autoRotate"
+            :class="{pause:isPlay==false}"
+            alt=""
+          />
+          <!-- 播放器-->
+          <audio
+            :src="musicUrl"
+            controls
+            autoplay
+            loop
+            @play="play"
+            @pause="pause"
+            class="audio"
+          ></audio>
+        </div>
+      </main>
+
+      <!-- 底部区域 -->
+      <footer id="footer">
+        <div class="mui-row">
+          <div class="mui-col-xs-3">
+            <a href="index.html"><i class="fa fa-home"></i><span>首页</span></a>
+          </div>
+          <div class="mui-col-xs-3">
+            <a class="active" href="palyer.html"
+              ><i class="fa fa-home"></i><span>播放</span></a
+            >
+          </div>
+          <div class="mui-col-xs-3">
+            <a href="songlist.html"><i class="fa fa-home"></i><span>歌曲列表</span></a>
+          </div>
+          <div class="mui-col-xs-3">
+            <a href="video.html"><i class="fa fa-home"></i><span>MV</span></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./lib/mui/js/mui.js"></script>
+    <script src="./lib/vue/vue.js"></script>
+    <script src="./lib/vue/axios.js"></script>
+    <script src="./lib/vue/vue-router.js"></script>
+
+    <script>
+      let app = new Vue({
+        el: "#cody",
+        data: {
+          // 歌曲地址
+          musicUrl: "",
+          // 歌曲封面url
+          picUrl: "",
+          // 是否播放
+          isPlay: false
+        },
+        methods: {
+          //播放
+          playMusic(item) {
+            axios.get("https://autumnfish.cn/song/url?id=" + item.id).then(
+              res => {
+                this.musicUrl = res.data.data[0].url;
+              },
+              err => {}
+            );
+             // 获取 封面url
+           axios
+              .get("https://autumnfish.cn/album?id=" + item.album.id)
+              .then(
+                res => {
+                  // console.log(res)
+                  this.picUrl = res.data.album.picUrl;
+                },
+                err => {}
+              );
+          },
+          
+          // 歌曲播放
+          play() {
+            console.log("play");
+            this.isPlay = true;
+          },
+          pause() {
+            console.log("pause");
+            this.isPlay = false;
+          }
+        }
+      });
+
+      /*滚动初始化*/
+      mui(".mui-scroll-wrapper").scroll({
+        bounce: true, //是否启用回弹
+        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+      });
+    </script>
+  </body>
+</html>

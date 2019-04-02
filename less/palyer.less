@@ -1,0 +1,42 @@
+@import 'base.less';
+
+#cody {
+    #main {
+        width: 100%;
+        
+        position: relative;
+        display: flex;
+        .mui-scroll-wrapper {
+            // 把默认绝对定位改成相对定位
+            position: relative;
+            // 把这个区域滚动的盒子高度设置为100% 和main的内容一样
+            height: 100%;
+        }
+        .paly {
+            width: 100%;
+            display: flex;
+            background: url('../images/xf03.jpg');
+            background-size: cover;
+            justify-content: center;
+            flex-flow: wrap;
+            
+            .cover {
+                width: 1.16rem;
+                height: 1.16rem;
+                border-radius: 50%;
+                display: block;
+                margin: 0.2rem auto;
+                background: url("../images/xf02.jpg");
+                background-size: cover;
+                box-shadow: 0 0 0.1rem red;
+            }
+            .audio {
+                display: block;
+                width: 80%;
+                position: absolute;
+                bottom: .54rem;
+                
+            }
+        }
+    }
+}

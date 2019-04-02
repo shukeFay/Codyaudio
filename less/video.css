@@ -1,0 +1,177 @@
+html {
+  font-size: 26.6667vw;
+}
+body {
+  font-size: .14rem;
+  overflow: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+img {
+  vertical-align: middle;
+}
+#cody {
+  /* 头部区域样式,因为其他页面用的上,所以写在base文件*/
+  /*底部区域样式*/
+}
+#cody #header {
+  display: flex;
+  background-color: hotpink;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#cody #header a {
+  display: block;
+  text-align: center;
+  line-height: .45rem;
+  color: #fff;
+  font-size: .22rem;
+}
+#cody #header .left {
+  width: .8rem;
+  height: 0.45rem;
+  text-align: center;
+  line-height: .45rem;
+}
+#cody #header .left h1 {
+  text-align: center;
+  line-height: .45rem;
+  font-size: .3rem;
+}
+#cody #header .content {
+  flex: 1;
+  text-align: left;
+  width: 100%;
+  padding-left: .3rem;
+}
+#cody #header .content h4 {
+  line-height: .45rem;
+  font-weight: normal;
+  font-size: 0.22rem;
+}
+#cody #header .content form {
+  padding-top: .05rem;
+}
+#cody #header .content form input {
+  background-color: #fff;
+  height: 0.35rem;
+  margin-bottom: 0;
+  color: #000;
+  text-align: left;
+  font-size: .14rem;
+}
+#cody #header .right {
+  width: 0.45rem;
+  height: 0.45rem;
+  text-align: center;
+  line-height: .45rem;
+}
+#cody #main {
+  padding: 0.45rem 0;
+  height: 100vh;
+}
+#cody #main .mui-scroll-wrapper {
+  position: relative;
+  height: 100%;
+}
+#cody #footer {
+  background-color: hotpink;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+#cody #footer a {
+  display: flex;
+  height: 0.45rem;
+  color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#cody #footer a span {
+  line-height: 1;
+}
+#cody #footer a.active {
+  color: #77e4f8;
+}
+#cody #main {
+  display: flex;
+}
+#cody #main .mui-scroll-wrapper {
+  position: relative;
+  height: 2.4rem;
+}
+#cody #main .videomain {
+  flex: 1;
+  height: 100%;
+  background: url('../images/xif05.jpg') no-repeat;
+  background-size: cover;
+  display: block;
+  overflow: hidden;
+  /* 动画的class */
+}
+#cody #main .videomain input {
+  width: 80%;
+  display: block;
+  margin: 0.1rem auto;
+  border-radius: 0.6rem;
+  border: none;
+  font-size: 0.22rem;
+  padding-left: 0.1rem;
+  background-color: #fff;
+  color: #666;
+}
+#cody #main .videomain ul {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+}
+#cody #main .videomain ul li {
+  width: 100%;
+  margin: 0 auto;
+  list-style: none;
+  height: 0.46rem;
+  color: white;
+  cursor: pointer;
+  line-height: 0.46rem;
+  border: s solid #000;
+  font-weight: 700;
+  padding-left: 0.1rem;
+  color: red;
+  font-size: .16rem;
+  overflow: hidden;
+}
+#cody #main .videomain ul li:hover {
+  background-color: skyblue;
+  opacity: 0.5;
+}
+#cody #main .videomain .list-item {
+  display: inline-block;
+  margin-right: 0.1rem;
+}
+#cody #main .videomain .list-enter-active {
+  transition: all 1s;
+}
+#cody #main .videomain .list-enter,
+#cody #main .videomain .list-leave-to {
+  opacity: 0;
+  transform: translateX(1rem);
+}
+#cody #main .videomain video {
+  display: block;
+  position: absolute;
+  width: 100%;
+  /* height: 50%; */
+  bottom: .54rem;
+}

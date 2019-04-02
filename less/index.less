@@ -1,0 +1,90 @@
+@import "base.less";
+
+#cody {
+
+    #main {
+        display: flex;
+        .mui-scroll-wrapper {
+            // 把默认绝对定位改成相对定位
+            position: relative;
+            // 把这个区域滚动的盒子高度设置为100% 和main的内容一样
+            height: 4rem;
+        }
+
+        .list {
+            flex: 1;
+            background: url('../images/xf01.jpg')no-repeat;
+            background-size: cover;
+            height: 100%;
+            overflow: hidden;
+
+            input {
+                width: 80%;
+                display: block;
+                margin: 0.1rem auto;
+                border-radius: 0.6rem;
+                border: none;
+                font-size: 0.22rem;
+                padding-left: 0.1rem;
+                background-color: #fff;
+                color: #666;
+            }
+
+            ul {
+                width: 80%;
+                margin: 0 auto;
+                padding: 0;
+
+                li {
+                    width: 100%;
+                    margin: 0 auto;
+                    list-style: none;
+                    height: 0.5rem;
+                    color: white;
+                    cursor: pointer;
+                    line-height: 0.5rem;
+                    border: s solid #000;
+                    font-weight: 700;
+                    padding-left: 0.1rem;
+                    color: red;
+                     font-size: .16rem;
+                    overflow: hidden;
+
+                    &:hover {
+                        background-color: skyblue;
+                        opacity: 0.5;
+                    }
+                }
+            }
+
+            /* 动画的class */
+            .list-item {
+                display: inline-block;
+                margin-right: 0.1rem;
+            }
+
+            .list-enter-active {
+                transition: all 1s;
+            }
+
+            .list-enter,
+            .list-leave-to
+
+            /* .list-leave-active for below version 2.1.8 */
+                {
+                opacity: 0;
+                transform: translateX(1rem);
+            }
+
+        }
+        .audio {
+            // display: block;
+            display: flex;
+            width: 80%;
+            position: absolute;
+            bottom: .54rem;
+            left: .38rem;
+          
+        }
+    }
+}

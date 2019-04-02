@@ -1,0 +1,107 @@
+html {
+  font-size: 26.6667vw;
+}
+body {
+  font-size: .14rem;
+  overflow: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+img {
+  vertical-align: middle;
+}
+#cody {
+  /* 头部区域样式,因为其他页面用的上,所以写在base文件*/
+  /*底部区域样式*/
+}
+#cody #header {
+  display: flex;
+  background-color: hotpink;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#cody #header a {
+  display: block;
+  text-align: center;
+  line-height: .45rem;
+  color: #fff;
+  font-size: .22rem;
+}
+#cody #header .left {
+  width: .8rem;
+  height: 0.45rem;
+  text-align: center;
+  line-height: .45rem;
+}
+#cody #header .left h1 {
+  text-align: center;
+  line-height: .45rem;
+  font-size: .3rem;
+}
+#cody #header .content {
+  flex: 1;
+  text-align: left;
+  width: 100%;
+  padding-left: .3rem;
+}
+#cody #header .content h4 {
+  line-height: .45rem;
+  font-weight: normal;
+  font-size: 0.22rem;
+}
+#cody #header .content form {
+  padding-top: .05rem;
+}
+#cody #header .content form input {
+  background-color: #fff;
+  height: 0.35rem;
+  margin-bottom: 0;
+  color: #000;
+  text-align: left;
+  font-size: .14rem;
+}
+#cody #header .right {
+  width: 0.45rem;
+  height: 0.45rem;
+  text-align: center;
+  line-height: .45rem;
+}
+#cody #main {
+  padding: 0.45rem 0;
+  height: 100vh;
+}
+#cody #main .mui-scroll-wrapper {
+  position: relative;
+  height: 100%;
+}
+#cody #footer {
+  background-color: hotpink;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+#cody #footer a {
+  display: flex;
+  height: 0.45rem;
+  color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#cody #footer a span {
+  line-height: 1;
+}
+#cody #footer a.active {
+  color: #77e4f8;
+}
